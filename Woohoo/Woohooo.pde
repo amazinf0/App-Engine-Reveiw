@@ -21,8 +21,8 @@ minim = new Minim (this); //load from datat directory, loadfile should also load
   println ("Exported Directory", anyDirectory);
   File githubDirectory = new File(directory); //Used when prototyping
   File[] FileListAnyDirectory = anyDirectory.listFiles();
-  printArray(FileLiseAnyDirectory);
-  println("Items In FileList", FileListAnyDirectory.length)
+  printArray(FileListAnyDirectory);
+  println("Items In FileList", FileListAnyDirectory.length);
   //Four Loop
   for (File file : FileListAnyDirectory){
     if (file.isFile() ) {

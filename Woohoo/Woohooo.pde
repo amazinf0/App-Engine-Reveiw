@@ -1,13 +1,4 @@
 //Global Variables
-//background music
-//play/pause
-//sound effects
-//stop
-//fast forward
-//fast rewind
-//mute
-//loop
-//B=Button, T=Text, H=Height, W=Width
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -25,10 +16,9 @@ PImage Cursor;
 void setup() {
   size(1200, 700);
   minim = new Minim(this);
-  song1 = minim.loadFile("../Sounds/Smokey.mp3");
-  song2 = minim.loadFile("../Sounds/Hermanos.mp3");
-  HectorBoom = minim.loadFile("../Sounds/bell.mp3");
-  Saul = minim.loadFile("../Sounds/saul.mp3");
+  song1 = minim.loadFile("../");
+  song2 = minim.loadFile("../");
+  
   display();              
   populationVariables();
   nightMode();
@@ -59,21 +49,6 @@ void draw() {
   
   tint(255, 255);
   nightMode();
-
-  //
-  
-  
-  //
-  //Hover-over start button 2
-  if ( mouseX> StartX && mouseX< StartX+StartW && mouseY> StartY && mouseY< StartY+StartH ) {
-    buttonFill = green;
-  } else {
-    buttonFill = red;
-  }//End Hover-over
-  fill(buttonFill);
-  rect(StartX, StartY, StartW, StartH);
-  fill(White);
-  
   //
   if ( mouseX> quitX && mouseX< quitX+QuitButtonW && mouseY> quitY && mouseY< quitY+QuitButtonH ) {
     buttonFill = green;
@@ -344,7 +319,7 @@ void draw() {
       if (song2.isPlaying()) {
         song2.pause();
         musical1=false;
-      } else if (song2.position()>= song2.length()*4/5) {
+      } else if (song2.position()>= song2.length()*4.5/5) {
         song2.rewind();
         song2.play();
         musical1=false;
@@ -382,8 +357,6 @@ void mousePressed() {
   FastRON=false;
   MuteON=false;
   LoopON=false;
-     HectorBoom.pause();
-     HectorBoom.rewind();
      Functions();
 }//End mousePressed
 //
